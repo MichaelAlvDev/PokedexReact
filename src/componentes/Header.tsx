@@ -1,9 +1,12 @@
 //import React from 'react';
-
+import styles from "./Header.module.css"
 const Header = () => {
     return (
-        <header>
-            "header component"
+        <header className={styles.header}>
+            <input
+                placeholder="Search a Pokemon"
+                type="text"
+            />
         </header>
     );
 };
