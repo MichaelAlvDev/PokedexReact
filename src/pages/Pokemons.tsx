@@ -1,11 +1,11 @@
-//import React from 'react';
-
+import { useState } from "react";
 import Header from "../componentes/Header";
 
 const Pokemons = () => {
+    const [query,setQuery] = useState("")
     return (
         <>
-        <Header/>
+            <Header query={query} setQuery={setQuery}/>
             <main>
                 <h1>POKEMONS</h1>
             </main>
