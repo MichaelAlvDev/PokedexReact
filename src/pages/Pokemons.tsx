@@ -1,14 +1,24 @@
 import { useState } from "react";
 import Header from "../componentes/Header";
 import Footer from "../componentes/Footer";
-
+import { Link } from "react-router-dom";
+import BulbasaurPic from "../assets/bulbasaur.gif"
+import styles from "./pokemons.module.css"
 const Pokemons = () => {
-    const [query,setQuery] = useState("")
+    const [query, setQuery] = useState("")
     return (
         <>
-            <Header query={query} setQuery={setQuery}/>
+            <Header query={query} setQuery={setQuery} />
             <main>
-                <h1>POKEMONS</h1>
+                <nav>
+                    <Link className={styles.listItem} to="/">
+                        <img className={styles.listItemIcon} src={BulbasaurPic} alt="bubasaur" />
+                        <div className={styles.listItemText}>
+                            <span>Bulbasaur</span>
+                            <span>001</span>
+                        </div>
+                    </Link>
+                </nav>
             </main>
             <Footer />
         </>
