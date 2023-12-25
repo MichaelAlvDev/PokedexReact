@@ -16,8 +16,10 @@ export async function fetchPokemons(): Promise<Pokemon[]> {
         id: pokemon.national_number,
         imgSrc: `https://img.pokemondb.net/sprites/black-white/anim/normal/${formatName(pokemon.name).toLowerCase()
             }.gif`,
-        imgSrcNormal:`https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/${formatName(pokemon.name).toLowerCase()
-    }.png`,
+        imgSrcNormal: `https://img.pokemondb.net/sprites/omega-ruby-alpha-sapphire/dex/normal/${formatName(pokemon.name).toLowerCase()
+            }.png`,
+        imgSrcLarge: `https://img.pokemondb.net/artwork/${formatName(pokemon.name).toLowerCase()
+            }.jpg`,
     }));
     const uniquePokemons = pokemons.filter(
         (pokemon: any, index: number) =>

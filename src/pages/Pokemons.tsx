@@ -29,7 +29,7 @@ const Pokemons = () => {
                             to={`/pokemons/${pokemon.name.toLowerCase()}`}>
                             <img
                                 className={styles.listItemIcon}
-                                src={pokemon.imgSrc}
+                                src={pokemon.id<650? pokemon.imgSrc:pokemon.imgSrcLarge}
                                 alt={pokemon.name}
                             />
                             <div className={styles.listItemText}>
