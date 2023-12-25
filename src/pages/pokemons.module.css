@@ -31,6 +31,7 @@
 .listItemText> :first-child {
   background: -webkit-linear-gradient(rgba(124, 166, 252, 1) 25%,
       rgba(119, 235, 129, 1) 100%);
+  background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-size: 1rem;

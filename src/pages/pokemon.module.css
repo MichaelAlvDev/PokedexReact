@@ -1,0 +1,32 @@
+.pokemon {
+    height: 85vh;
+}
+.button {
+    display: flex;
+    align-items: center;
+    padding: 50px 50px 0 50px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: none;
+}
+.buttonImg {
+    max-width: 25px;
+    margin-right: 5px;
+}
+.pokemonInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px 0;
+}
+.pokemonInfoImg {
+    max-width: 150px;
+    margin:  20px 0;
+}
+
+.pokemonTitle {
+    margin: 50px 0;
+    font-size: 2rem;
+    font-weight: bold;
+}
