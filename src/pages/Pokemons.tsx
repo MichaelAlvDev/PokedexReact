@@ -29,7 +29,7 @@ const Pokemons = () => {
                         <Link
                             key={pokemon.id}
                             className={styles.listItem}
-                            to={`/pokemons/${pokemon.name.toLowerCase()}`}>
+                            to={`/pokemon/${pokemon.name.toLowerCase()}`}>
                             <img
                                 className={styles.listItemIcon}
                                 src={pokemon.id<650? pokemon.imgSrc:pokemon.imgSrcLarge}
