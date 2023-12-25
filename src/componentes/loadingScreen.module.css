@@ -1,0 +1,8 @@
+.loadingSc{
+    display: grid;
+    place-items: center;
+    height: 100vh;   
+}
+.loadingText{
+    font-weight: bold;
+}
