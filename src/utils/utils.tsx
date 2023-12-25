@@ -9,8 +9,8 @@ export function formatName(name: string): string {
     return name.replace("♂", "-m");
   } else if (name.includes(". ")) {
     return name.replace(". ", "-");
-  } else if (name.includes("farfetch'd")) {
-    return name.replace("farfetch'd", "farfetchd");
+  } else if (name.includes("Farfetch'd")) {
+    return name.replace("Farfetch'd", "farfetchd");
   } else {
     return name;
   }
