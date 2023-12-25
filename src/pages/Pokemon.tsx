@@ -1,9 +1,10 @@
-import React from 'react';
+import Footer from "../componentes/Footer";
 
 const Pokemon = () => {
     return (
         <div>
             Pokemon Component
+            <Footer/>
         </div>
     );
 };

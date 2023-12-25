@@ -27,4 +27,3 @@ export async function fetchPokemons(): Promise<Pokemon[]> {
     );
     return uniquePokemons;
 }
-"https://img.pokemondb.net/sprites/black-white/anim/normal/function toLowerCase() { [native code] }.gif"

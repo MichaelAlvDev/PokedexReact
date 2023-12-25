@@ -13,11 +13,11 @@ const Footer = () => {
                 Pokemons
             </Link>
             <Link to="/items" className={styles.footerLink}>
-                <img className={styles.footerIcon} src={ItemPic} alt="Pokeball" />
+                <img className={styles.footerIcon} src={ItemPic} alt="items" />
                 Items
             </Link>
             <Link to="/map" className={styles.footerLink}>
-                <img className={styles.footerIcon} src={LocationPic} alt="Pokeball" />
+                <img className={styles.footerIcon} src={LocationPic} alt="map" />
                 Map
             </Link>
         </footer>

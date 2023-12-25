@@ -1,9 +1,11 @@
-import React from 'react';
+import Footer from "../componentes/Footer";
 
 const Items = () => {
     return (
         <div>
-           Items Component
+            Items Component
+
+            <Footer />
         </div>
     );
 };
