@@ -12,7 +12,7 @@ export async function fetchPokemonDetail(name: string): Promise<PokemonDetails> 
     const pokemon={
         name: mainRes.name,
         id: mainRes.id,
-        imgSrc: mainRes.sprites.front_default,
+        imgSrc: `https://img.pokemondb.net/artwork/${formatName(mainRes.name).toLowerCase()}.jpg`,
         hp: mainRes.stats[0].base_stat,
         attack: mainRes.stats[1].base_stat,
         defense: mainRes.stats[2].base_stat,

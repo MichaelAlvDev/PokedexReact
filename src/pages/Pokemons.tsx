@@ -6,7 +6,7 @@ import styles from "./pokemons.module.css"
 import { fetchPokemons } from "../api/fetchPokemons";
 import { Pokemon } from "../types/types";
 import LoadingScreen from "../componentes/LoadingScreen";
-import { waitFor } from "../utils/utils";
+import { formatName, waitFor } from "../utils/utils";
 
 const Pokemons = () => {
     const [query, setQuery] = useState("")
@@ -37,7 +37,7 @@ if (isLoading || !pokemons){
                         <Link
                             key={pokemon.id}
                             className={styles.listItem}
-                            to={`/pokemon/${pokemon.name.toLowerCase()}`}>
+                            to={`/pokemon/${formatName(pokemon.name).toLowerCase()}`}>
                             <img
                                 className={styles.listItemIcon}
                                 src={pokemon.id < 650 ? pokemon.imgSrc : pokemon.imgSrcLarge}
