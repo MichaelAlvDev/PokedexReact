@@ -10,7 +10,6 @@ export async function fetchPokemons(): Promise<Pokemon[]> {
         throw new Error("Failed to fetch pokemons");
     }
     const mainRes = await response.json(); // si resuelve, mainRes = response en formato json
-    //console.log(mainRes); //comprobar data
     const pokemons = mainRes.results.map((pokemon: any) => ({
         name: pokemon.name,
         id: pokemon.national_number,
