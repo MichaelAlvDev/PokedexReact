@@ -38,10 +38,15 @@
 .buttonsBar>.button .buttonImg{
 margin:0 0 10px 0;
 max-width: 35px;
+opacity: 0.6;
 }
-
+.buttonsBar>.button:hover .buttonImg{
+    opacity: 1;
+    transition: 800ms;
+    }
 .namePokemon{
     font-weight: bold;
+    transition: 800ms;
 }
 
 /***trick**/
@@ -49,10 +54,10 @@ max-width: 35px;
     display: none;
 }
 .show{
-    display: inherit;
+    transition: 800ms;
 }
 .silhouette {
     -webkit-filter: grayscale(100%) brightness(0);
     filter: grayscale(100%) brightness(0);
-    opacity: 0.6;
+    opacity: 1;
   }

@@ -8,31 +8,43 @@ import { useEffect, useState } from "react";
 import LoadingScreen from "../componentes/LoadingScreen";
 import { waitFor } from "../utils/utils";
 import poke from "../assets/charmeleon.png"
+import { Pokemon, chosePokemon, } from "../types/types";
+import { fetchPokemons } from "../api/fetchPokemons";
 
 
 const WhosThatPokemon = () => {
+    const navigate = useNavigate();
     const [isLoading, setIsLoading] = useState(false);
     const [isHide, setIsHide] = useState(true);
-    const navigate = useNavigate();
-
+    const [pokemons, setPokemons] = useState<Pokemon[]>([]) //state para array de pokemons
+    const [chosenPokemon, setChosenPokemon] = useState({}) //state para el pokemon elegido aleatoriamente
+    const [refreshRandom, setRefreshRandom] = useState(0)
     useEffect(() => { //useEffect para el loading screen y fetch
-        async function LoadingScreen() {
+        async function FetchAllPokemons() {
             setIsLoading(true);
             await waitFor(800);
-            //Await Api
+            const allPokemons = await fetchPokemons();
+            setPokemons(allPokemons);
             setIsLoading(false);
             return
         };
-        LoadingScreen();
+        FetchAllPokemons();
     }, [])
-
-    if (isLoading || !Map) {
+    if (isLoading || !WhosThatPokemon) {
         return <LoadingScreen />
     }
+    useEffect(() => { //get random pokemon 
+        const selectPokemon: chosePokemon = pokemons[Math.floor(Math.random() * pokemons.length)]
+        setChosenPokemon(selectPokemon)
+    }), [refreshRandom]
+
     function handleClickReveal() {
         isHide ? setIsHide(false) : setIsHide(true)
     }
 
+    function handleClickRefresh() {
+        setRefreshRandom(refreshRandom+1)
+    }
     return (
         <>
             <button
@@ -45,14 +57,14 @@ const WhosThatPokemon = () => {
                 />Go Back
             </button>
             <main >
-                <div className={styles.pokeHold}> 
-                    <img src={poke} alt="" className={`${styles.pokeHoldImg} ${isHide?styles.silhouette:styles.show}`} />
-                    <span className={`${isHide?styles.show:styles.hidde}`} >Who`s That Pokemon. . . ?</span>
-                    <span className={`${styles.namePokemon} ${isHide?styles.hidde:styles.show}`}>Nombre</span>
+                <div className={styles.pokeHold}>
+                    <img src={poke} alt="" className={`${styles.pokeHoldImg} ${isHide ? styles.silhouette : styles.show}`} />
+                    <span className={`${isHide ? styles.show : styles.hidde}`} >Who`s That Pokemon. . . ?</span>
+                    <span className={`${isHide ? styles.hidde : styles.show}`}>It`s . .  <span className={styles.namePokemon}>{chosenPokemon.name}</span>. . .! !</span>
 
                 </div>
                 <div className={styles.buttonsBar}>
-                    <button className={styles.button}>
+                    <button className={styles.button} onClick={handleClickRefresh}>
                         <img
                             className={styles.buttonImg}
                             src={RefreshImg}

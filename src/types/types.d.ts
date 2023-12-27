@@ -4,6 +4,7 @@ export type Pokemon = {
   imgSrc: string;
   imgSrcNormal: string;
   imgSrcLarge: string;
+  imgSrcSilhouette: string;
 };
 export type PokemonDetails = {
   name: string;
@@ -13,3 +14,11 @@ export type PokemonDetails = {
   attack: number;
   defense: number;
 }
+export type chosePokemon = {
+  name: string,
+  id: number,
+  imgSrc: string,
+  imgSrcNormal: string,
+  imgSrcLarge: string,
+  imgSrcSilhouette: string,
+};

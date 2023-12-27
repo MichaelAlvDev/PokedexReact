@@ -19,6 +19,8 @@ export async function fetchPokemons(): Promise<Pokemon[]> {
             }.png`,
         imgSrcLarge: `https://img.pokemondb.net/artwork/${formatName(pokemon.name).toLowerCase()
             }.jpg`,
+        imgSrcSilhouette: `https://img.pokemondb.net/sprites/home/normal/1x/${formatName(pokemon.name).toLowerCase()
+            }.png`,
     }));
     const uniquePokemons = pokemons.filter(
         (pokemon: any, index: number) =>
