@@ -1,19 +1,20 @@
 import { useNavigate } from "react-router-dom";
 import Footer from '../componentes/Footer';
-import styles from "./map.module.css"
+import styles from "./whosThatPokemon.module.css"
 import PokeballImg from "../assets/pokeball.png"
 import comingSoon from "../assets/loading.gif"
 import { useEffect, useState } from "react";
 import LoadingScreen from "../componentes/LoadingScreen";
 import { waitFor } from "../utils/utils";
 
-const Map = () => {
+const WhosThatPokemon = () => {
     const [isLoading, setIsLoading] = useState(false);
     const navigate = useNavigate();
     useEffect(() => {
       async function LoadingScreen(){
             setIsLoading(true);
             await waitFor(800);
+            //Await Api
             setIsLoading(false);
             return
         };
@@ -37,7 +38,8 @@ const Map = () => {
             <main >
                 <div className={styles.comingSoon}>
                     <img src={comingSoon} alt="" className={styles.comingSoonImg} />
-                    <span>Coming soon. . .</span>
+                    <span>Whos That Pokemon. . .</span>
+
                 </div>
             </main>
             <Footer />
@@ -45,4 +47,4 @@ const Map = () => {
     );
 };
 
-export default Map;
+export default WhosThatPokemon;

@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./footer.module.css"
 import PokemonPic from "../assets/pikachu.png";
-import LocationPic from "../assets/pointer.png";
+import Dex from "../assets/pokedex.png";
 import ItemPic from "../assets/pokeball.png";
 
 
@@ -16,9 +16,9 @@ const Footer = () => {
                 <img className={styles.footerIcon} src={ItemPic} alt="items" />
                 Items
             </Link>
-            <Link to="/map" className={styles.footerLink}>
-                <img className={styles.footerIcon} src={LocationPic} alt="map" />
-                Map
+            <Link to="/whos-that-pokemon" className={styles.footerLink}>
+                <img className={styles.footerIcon} src={Dex} alt="whos-that-pokemon" />
+                Who's that Pokemon?
             </Link>
         </footer>
     );

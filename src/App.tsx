@@ -1,6 +1,6 @@
 import './App.css'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
-import { Items, Map, Pokemon, Pokemons } from './pages'
+import { Items, Pokemon, Pokemons, WhosThatPokemon } from './pages'
 
 
 function App() {
@@ -13,7 +13,7 @@ function App() {
           <Route path='/pokemon/:name' element={<Pokemon />} />
           <Route path='/pokemons' element={<Pokemons />} />
           <Route path='/items' element={<Items />} />
-          <Route path='/map' element={<Map />} />
+          <Route path='/whos-that-pokemon' element={<WhosThatPokemon />} />
           <Route path='/' element={<Pokemons />} />
         </Routes>
       </div>
