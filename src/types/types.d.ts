@@ -13,6 +13,7 @@ export type PokemonDetails = {
   hp: number;
   attack: number;
   defense: number;
+  // flavor : string;
 }
 export type chosePokemon = {
   name: string,

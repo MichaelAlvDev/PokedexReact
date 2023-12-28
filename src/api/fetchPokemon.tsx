@@ -16,6 +16,7 @@ export async function fetchPokemonDetail(name: string): Promise<PokemonDetails> 
         hp: mainRes.stats[0].base_stat,
         attack: mainRes.stats[1].base_stat,
         defense: mainRes.stats[2].base_stat,
+        // flavor: `https://pokeapi.co/api/v2/characteristic/${mainRes.id}/`
     }
 
     return pokemon;

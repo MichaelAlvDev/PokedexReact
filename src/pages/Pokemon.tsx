@@ -47,6 +47,7 @@ const Pokemon = () => {
                     <div>Hp: {pokemon?.hp}</div>
                     <div>Attack: {pokemon?.attack}</div>
                     <div>Defense:{pokemon?.defense}</div>
+                    {/* <div>Defense:{pokemon?.flavor}</div> */}
                 </main>
             </div>
             <Footer />

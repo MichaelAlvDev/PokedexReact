@@ -16,28 +16,39 @@ const WhosThatPokemon = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [isHide, setIsHide] = useState(true);
     const [pokemons, setPokemons] = useState<Pokemon[]>([]) //state para array de pokemons
-    const [chosenPokemon, setChosenPokemon] = useState({}) //state para el pokemon elegido aleatoriamente
+    const [chosenPokemon, setChosenPokemon] = useState({
+        name: "",
+        id: 0,
+        imgSrc: "",
+        imgSrcNormal: "",
+        imgSrcLarge: "",
+        imgSrcSilhouette: "",
+    }) //state para el pokemon elegido aleatoriamente
     useEffect(() => { //useEffect para el loading screen y fetch
         async function FetchAllPokemons() {
             setIsLoading(true);
             await waitFor(800);
             const allPokemons = await fetchPokemons();
             setPokemons(allPokemons);
-            const selectPokemon: chosePokemon = allPokemons[Math.floor(Math.random() * pokemons.length)]
+            const selectPokemon: chosePokemon = allPokemons[Math.floor(Math.random() * allPokemons.length)]
             setChosenPokemon(selectPokemon)
             setIsLoading(false);
             return
         };
         FetchAllPokemons();
-        
+
     }, [])
-   
+
     if (isLoading || !WhosThatPokemon) {
         return <LoadingScreen />
     }
-    function refreshPokemon() { //get random pokemon 
+    async function refreshPokemon() { //get random pokemon 
+        setIsLoading(true);
+        await waitFor(500);
+        setIsHide(true);
         const selectPokemon: chosePokemon = pokemons[Math.floor(Math.random() * pokemons.length)]
         setChosenPokemon(selectPokemon)
+        setIsLoading(false);
     }
 
     function handleClickReveal() {
@@ -45,7 +56,7 @@ const WhosThatPokemon = () => {
     }
 
     function handleClickRefresh() {
-        refreshPokemon() 
+        refreshPokemon()
     }
     return (
         <>
